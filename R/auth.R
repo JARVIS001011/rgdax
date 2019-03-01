@@ -60,13 +60,13 @@ auth <- function(method,
   if (method == "GET") {
     #Get test macOS----
     if (Sys.info()["sysname"] == "Darwin") {
-      response <- fromJSON(rawToChar(
+      response <- fromJSON(
         getURLContent(
           url = url,
           curl = getCurlHandle(useragent = "R"),
           httpheader = httpheader
         )
-      ))
+      )
     }
     #Get test windows----
     else {
