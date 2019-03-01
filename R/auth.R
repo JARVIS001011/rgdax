@@ -70,7 +70,8 @@ auth <- function(method,
     }
     #Get test windows----
     else {
-      response <- fromJSON(getURLContent(
+      response <- fromJSON(
+        getURLContent(
         url = url,
         curl = getCurlHandle(useragent = "R"),
         httpheader = httpheader
@@ -106,7 +107,8 @@ auth <- function(method,
   else if (method == "DELETE") {
     #Post test macOS----
     if (Sys.info()["sysname"] == "Darwin") {
-      response <- fromJSON(httpDELETE(
+      response <- fromJSON(
+        httpDELETE(
         url = url,
         curl = getCurlHandle(useragent = "R"),
         httpheader = httpheader
